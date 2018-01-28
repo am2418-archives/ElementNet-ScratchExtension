@@ -22,7 +22,11 @@ var htmlCode = "";
             ['r', 'head %s', 'head',''],
             ['r', 'p %s', 'p',''],
             ['r', 'title %s', 'title',''],
-            ['r','group %s and %s','group','','']
+            ['r','group %s and %s','group','',''],
+            ['r', 'Script %s', 'script',''],
+           ['r', 'Style %s', 'style',''],
+            ['r', 'Style selector %s with code %s', 'ss','',''],
+            ['r', 'Style attribute %s value %s', 'sa','','']
         ],
 menus: {
 txt: ['hi','bye','how are you?'],
@@ -59,6 +63,18 @@ return "<title>"+i+"</title>";
             ext.group = function(a,b) {
             return a+b;
             }
+             ext.script = function(i) {
+return "<script>"+i+"</script>";       
+    }
+             ext.style = function(i) {
+return "<style>"+i+"</style>";       
+    }
+              ext.ss = function(a,i) {
+return a+" {"+i+"}";       
+    }
+               ext.sa = function(a,i) {
+return a+":"+i+";";       
+    }
     // Name of Scratch Extension goes here
     ScratchExtensions.register('ElementNet', descriptor, ext); 
      // The name is 'Hello, World!''
