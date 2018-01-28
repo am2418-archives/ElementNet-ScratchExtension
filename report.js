@@ -26,7 +26,11 @@ var htmlCode = "";
             ['r', 'Script %s', 'script',''],
            ['r', 'Style %s', 'style',''],
             ['r', 'Style selector %s with code %s', 'ss','',''],
-            ['r', 'Style attribute %s value %s', 'sa','','']
+            ['r', 'Style attribute %s value %s', 'sa','',''],
+            ['r', 'bold %s', 'bold',''],
+            ['r', 'italic %s', 'italic',''],
+            ['r', 'code font %s', 'codefont',''],
+            ['r', 'link %s href: %s', 'link','','']
         ],
 menus: {
 txt: ['hi','bye','how are you?'],
@@ -74,6 +78,18 @@ return a+" {"+i+"}";
     }
                ext.sa = function(a,i) {
 return a+":"+i+";";       
+    }
+               ext.bold = function(i) {
+return "<bold>"+i+"</bold>";       
+    }
+               ext.italic = function(i) {
+return "<italic>"+i+"</italic>";       
+    }
+               ext.codefont = function(i) {
+return "<code>"+i+"</code>";       
+    }
+               ext.link = function(i,a) {
+return "<a href='"+a+"'>"+i+"</a>";       
     }
     // Name of Scratch Extension goes here
     ScratchExtensions.register('ElementNet', descriptor, ext); 
