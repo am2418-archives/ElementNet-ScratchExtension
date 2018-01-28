@@ -80,16 +80,16 @@ return a+" {"+i+"}";
 return a+":"+i+";";       
     }
                ext.bold = function(i) {
-return "<bold>"+i+"</bold>";       
+return "<b>"+i+"</b>";       
     }
                ext.italic = function(i) {
-return "<italic>"+i+"</italic>";       
+return "<i>"+i+"</i>";       
     }
                ext.codefont = function(i) {
 return "<code>"+i+"</code>";       
     }
                ext.link = function(i,a) {
-return "<a href='"+a+"'>"+i+"</a>";       
+return '<a href="'+a+'">'+i+'</a>';       
     }
     // Name of Scratch Extension goes here
     ScratchExtensions.register('ElementNet', descriptor, ext); 
