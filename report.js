@@ -14,14 +14,15 @@ var htmlCode = "";
     var descriptor = {
         blocks: [
             // Block type, block name, function name
-            [' ', '!DOCTYPE html %s', 'doctype',''],
-            [' ', 'text %s', 'txt','hi'],
+            ['r', '!DOCTYPE html %s', 'doctype',''],
+            ['r', 'text %s', 'txt','hi'],
             [' ', 'compile HTML %s', 'comp', ''],
             ['r', 'html %s', 'html',''],
             ['r', 'body %s', 'body',''],
             ['r', 'head %s', 'head',''],
             ['r', 'p %s', 'p',''],
-            ['r', 'title %s', 'title','']
+            ['r', 'title %s', 'title',''],
+            ['r','group %s and %s','group','','']
         ],
 menus: {
 txt: ['hi','bye','how are you?'],
@@ -35,7 +36,7 @@ geo: ['latitude','longitude']
 return "<!DOCTYPE html>"+i;
     }
         ext.txt = function(text) {
-    htmlCode = htmlCode + text;
+    return text;
     }
         ext.comp = function(code) {
     location.assign("javascript:innerHTML='"+code+"';");
@@ -55,6 +56,9 @@ return "<p>"+i+"</p>";
             ext.title = function(i) {
 return "<title>"+i+"</title>";       
     }
+            ext.group = function(a,b) {
+            return a+b;
+            }
     // Name of Scratch Extension goes here
     ScratchExtensions.register('ElementNet', descriptor, ext); 
      // The name is 'Hello, World!''
